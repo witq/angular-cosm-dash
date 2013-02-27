@@ -19,8 +19,8 @@ $(document).ready ->
             when '3hours' then interval = 60
             when '6hours' then interval = 300
             when '24hours' then interval = 900
-        getHistory()
-        subscribe()
+        getHistory(duration, interval)
+        subscribe(interval)
     
     stream = []
     
@@ -62,10 +62,10 @@ $(document).ready ->
             value: data.current_value
         plot.setData stream
         console.log 'graph updated, number of datapoints: ' + stream.length
-    getHistory = ->
+    getHistory = (dur, int)->
         cosm.datastream.history '58853', 'sensor1',
-            duration: duration
-            interval: interval
+            duration: dur
+            interval: int
             per_page: 1000
             timezone: 'Warsaw'
         , (data) ->
@@ -81,13 +81,16 @@ $(document).ready ->
             plot.setData stream
             console.log 'graph created, number of datapoints: ' + stream.length
           
-    getHistory()
+    getHistory(duration, interval)
     
-    subscribe = ->
-        setInterval (->
+    subscribe = (int)->
+        if sub?
+            clearInterval(sub)
+        sub = setInterval (->
             getData()
-        ), interval * 1000
+        ), int * 1000
+        console.log 'graph will be refreshed every ' + (int * 1000)/60000 + ' minute(s)'
     
-    subscribe()
+    subscribe(interval)
     
     
