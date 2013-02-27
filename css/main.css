@@ -1,0 +1,206 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,800,600&subset=latin,latin-ext);
+
+body {
+	font-family: 'Open Sans', sans-serif!important;
+}
+
+.morris-hover{position:absolute;z-index:1000;}.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255, 255, 255, 0.8);border:solid 2px rgba(230, 230, 230, 0.8);font-family:sans-serif;font-size:12px;text-align:center;}.morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0;}
+.morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0;}
+
+#wykres {
+    height: 266px;
+}
+.temperatura  {
+	border-radius: 4px;
+	background: #0000ff;
+	color: #fff;
+	font-size: 48px;
+	font-weight: bold;
+	line-height: normal;
+	text-align: center
+}
+.temperatura .value {
+	font-size: 110px
+}
+.termometr {
+	background: #f4f4f4;
+	margin: auto;
+	position: relative;
+	height: 288px;
+	width: 48px;
+}
+.termometr .maska {
+	height: 288px;
+	width: 48px;
+	left: 0px;
+	position: absolute;
+	top: 0px
+}
+.termometr .rtec {
+	background: #0000ff;
+	bottom: 0px;
+	height: 55px;
+	left: 0px;
+	position: absolute;
+	width: 48px;
+}
+.termometr .temp {
+	color: #fff;
+	font-weight: bold;
+	line-height: 14px;
+	position: absolute;
+	text-align: center;
+	width: 48px;
+	bottom: 7px
+}
+.wykres, .wykresRt {
+	height: 240px;
+	width: 100%
+}
+.cosmDialWrapper {
+	
+}
+.cosmDialWrapper h2 {
+	text-align: center;
+	margin-bottom: .5em
+}
+.cosmDial {
+	margin-top: 20px;
+	position: relative;
+	width: 100%;
+}
+.cosmDial .reading {
+	font-weight: 700;
+	font-size: 2.5em;
+	line-height: 1.5em;
+	position: absolute;
+	text-align: center;
+	top: 3.1em;
+	width: 100%
+}
+.cosmDial .reading .value {
+ 	font-size: 2em
+}
+.cosmDial .min, .cosmDial .max {
+	bottom: 7%;
+	position: absolute;
+	font-size: 1.5em;
+	font-weight: 700;
+}
+.cosmDial .min {
+	left: 25%
+}
+.cosmDial .max {
+	right: 25%
+}
+
+.panel {
+	position: relative;
+	width: inherit;
+	
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+}
+.panel .front {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 900;
+	width: inherit;
+	height: inherit;
+
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+
+	-moz-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform-style: preserve-3d;
+	-moz-backface-visibility: hidden;
+
+/* -webkit-transition: all 600ms cubic-bezier(0.680, 0, 0.265, 1); /* older webkit 
+-webkit-transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+   -moz-transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+    -ms-transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+     -o-transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+        transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */
+	
+}
+.panel.flip .front {
+	z-index: 900;
+	border-color: #eee;
+	background: #333;
+
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	
+}
+
+.panel .back {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 800;
+	width: inherit;
+	height: inherit;
+	
+	-webkit-transform: rotateY(-180deg);
+	-webkit-transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+
+	-moz-transform: rotateY(-180deg);
+	-moz-transform-style: preserve-3d;
+	-moz-backface-visibility: hidden;
+
+/*-webkit-transition: all 600ms cubic-bezier(0.680, 0, 0.265, 1); / older webkit 
+-webkit-transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+   -moz-transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+    -ms-transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+     -o-transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
+        transition: all 600ms cubic-bezier(0.680, -0.550, 0.265, 1.550); /* easeInOutBack */
+
+}
+
+.panel.flip .back {
+	z-index: 1000;
+
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform: rotateX(0deg) rotateY(0deg);
+	
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+	.row {
+		min-height: 480px
+	}
+	.panel {
+		width: 370px;
+		height: 420px
+	}
+}
+@media (min-width: 980px) and (max-width: 1199px) {
+	.row {
+		min-height: 412px
+	}
+	.panel {
+		width: 300px;
+		height: 352px
+	}
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {  }
+
