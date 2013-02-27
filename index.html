@@ -52,11 +52,10 @@
                 <div class="cosmDialWrapper well">
                     <h2>
                         Historia
-                        <select ng-model="timespan">
-                            <option value="3hr">Ostatnie 3 godziny</option>
-                            <option value="6hr">Ostatnie 6 godzin</option>
-                            <option value="24hr">Ostatni dzień</option>
-                            <option value="1wk">Ostatni tydzień</option>
+                        <select id="js-timespan-selector" ng-model="timespan">
+                            <option value="3hours">Ostatnie 3 godziny</option>
+                            <option value="6hours">Ostatnie 6 godzin</option>
+                            <option value="24hours">Ostatni dzień</option>
                         </select>
                     </h2>
 
@@ -84,6 +83,7 @@
         <!-- CoffeeScript Compiler -->
         <script src="js/vendor/coffee-script.js"></script>
         
+        <script src="coffee/cosmdial.coffee" type="text/coffeescript"></script>
         <script src="coffee/main.coffee" type="text/coffeescript"></script>
         
         
